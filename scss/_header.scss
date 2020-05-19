@@ -1,0 +1,88 @@
+#header {
+	position: relative;
+	background-image: url("../img/header.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	.header-content {
+		height: 100%;
+		width: 100%;
+		padding: 20px 50px;
+		padding-bottom: 30px;
+
+		.text {
+			color: #fff;
+			font-family: var(--font1);
+			text-align: left;
+			padding: 30px 20px;
+			width: 100%;
+			max-width: 500px;
+			// margin: 0 auto 30px;
+			align-self: center;
+			@include transition;
+
+			h1 {
+				font-weight: 800;
+				margin: 0;
+				margin-bottom: 0px;
+				font-size: 2.5em;
+				color: #fff;
+			}
+			p {
+				margin-bottom: 40px;
+				font-size: 1.2em;
+				text-shadow: 0px 0px 18px #000;
+			}
+		}
+
+		.image {
+			img {
+				width: 100%;
+				max-width: 600px;
+			}
+		}
+	}
+
+	@media (max-width: 950px) {
+		.header-content {
+			.text {
+				width: 80%;
+				margin: 0 auto;
+				justify-content: center;
+				text-align: center;
+			}
+
+			.image {
+				margin: 30px;
+
+				img {
+					max-width: 500px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 880px) {
+		.header-content {
+			justify-content: center;
+
+			.text {
+				width: calc(100% - 50px);
+				text-align: center;
+				justify-self: center;
+				padding: 30px 0;
+			}
+		}
+	}
+
+	@media (max-width: 520px) {
+		.header-content {
+			padding: 20px;
+		}
+	}
+} // header
