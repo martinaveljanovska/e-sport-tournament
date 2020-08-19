@@ -1,34 +1,29 @@
 $(function () {
-
-  // accordion
-  $('.toggle').click(function (e) {
+  // ACCORDION 
+  $(".toggle").click(function (e) {
     e.preventDefault();
+    let inner = $(this).next(".inner");
 
-    var toggle = $(this);
-
-    if (toggle.next().hasClass('show')) {
-      toggle.next().removeClass('show');
-      toggle.next().slideUp(350);
-      toggle.removeClass('active');
+    if ($(this).hasClass("active")) {
+      inner.removeClass("show");
+      inner.slideUp(350);
+      $(this).removeClass("active");
     } else {
-      toggle.parent().parent().find('.inner').removeClass('show');
-      // toggle.next().slideUp(350);
-      toggle.next().toggleClass('show');
-      toggle.next().slideToggle(350);
-      toggle.addClass('active');
+      $(this)
+        .closest(".accordion")
+        .find("a.active")
+        .removeClass("active");
+      $(this)
+        .closest(".accordion")
+        .find(".inner")
+        .not(inner)
+        .removeClass("show")
+        .slideUp(350);
+      inner.slideDown(350);
+      inner.addClass("show");
+      $(this).addClass("active");
     }
   });
-
-  // jQuery for page scrolling feature - requires jQuery Easing plugin
-  $('.page-scroll').bind('click', function (event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-      scrollTop: ($($anchor.attr('href')).offset().top - 50)
-    }, 250, 'easeOutSine');
-    event.preventDefault();
-  });
-
-
   // back to top button
 
   var offset = 550;
