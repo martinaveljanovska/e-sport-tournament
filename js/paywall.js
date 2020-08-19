@@ -1,6 +1,6 @@
-$(function () {
-	var paywall = new InplayerPaywall('ddd49fd0-fe60-4596-b656-4745c0527f27', [{ id: 101433 }]);
+var paywall = new InplayerPaywall('ddd49fd0-fe60-4596-b656-4745c0527f27', [{ id: 101433 }]);
 
+$(function () {
 	$(".inplayer-paywall-logout").parent().hide();
 	paywall.on("authenticated", function () {
 		$(".inplayer-paywall-login").parent().hide();
